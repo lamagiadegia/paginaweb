@@ -705,33 +705,39 @@ footer p { font-size:.88rem; color:rgba(245,237,224,.5); line-height:1.9; }
         </div>
       </div>
       <div class="cont-form rev-r">
-        <div class="fgrupo">
-          <label>Tu nombre</label>
-          <input type="text" placeholder="¿Cómo te llamas?">
+        <form action="https://formspree.io/f/xlgzrrqk" method="POST" id="formaGia">
+          <div class="fgrupo">
+            <label>Tu nombre</label>
+            <input type="text" name="nombre" placeholder="¿Cómo te llamas?" required>
+          </div>
+          <div class="fgrupo">
+            <label>Correo electrónico</label>
+            <input type="email" name="email" placeholder="tu@correo.com" required>
+          </div>
+          <div class="fgrupo">
+            <label>¿Qué te interesa?</label>
+            <select name="interes" required>
+              <option value="">Selecciona una opción</option>
+              <option>Comunidad Alkimia ($30/mes)</option>
+              <option>Guía de Escritura ($15)</option>
+              <option>Meditación Guiada Personalizada ($20)</option>
+              <option>Interpretación de Numerología ($20)</option>
+              <option>Sesión Virtual 1:1 ($100)</option>
+              <option>Sesión Grupal ($50)</option>
+              <option>Iniciar la Ruta Alkimia</option>
+              <option>Solo quiero contarte algo</option>
+            </select>
+          </div>
+          <div class="fgrupo">
+            <label>Cuéntame</label>
+            <textarea name="mensaje" rows="4" placeholder="¿Dónde estás en este momento? Escribe desde el corazón, aquí es seguro..."></textarea>
+          </div>
+          <button type="submit" class="fsubmit" id="enviar">Enviar con amor 🌿</button>
+        </form>
+        <div id="gracias" style="display:none;text-align:center;padding:2rem 0;">
+          <p style="font-family:Cormorant Garamond,serif;font-size:1.6rem;color:var(--verde);margin-bottom:0.8rem;">¡Gracias por escribir! 🌿</p>
+          <p style="font-size:1rem;color:var(--texto-2);line-height:1.8;">Tu mensaje llegó con amor. Gia te responderá muy pronto.</p>
         </div>
-        <div class="fgrupo">
-          <label>Correo electrónico</label>
-          <input type="email" placeholder="tu@correo.com">
-        </div>
-        <div class="fgrupo">
-          <label>¿Qué te interesa?</label>
-          <select>
-            <option value="">Selecciona una opción</option>
-            <option>Comunidad Alkimia ($30/mes)</option>
-            <option>Guía de Escritura ($15)</option>
-            <option>Meditación Guiada Personalizada ($20)</option>
-            <option>Interpretación de Numerología ($20)</option>
-            <option>Sesión Virtual 1:1 ($100)</option>
-            <option>Sesión Grupal ($50)</option>
-            <option>Iniciar la Ruta Alkimia</option>
-            <option>Solo quiero contarte algo</option>
-          </select>
-        </div>
-        <div class="fgrupo">
-          <label>Cuéntame</label>
-          <textarea rows="4" placeholder="¿Dónde estás en este momento? Escribe desde el corazón, aquí es seguro..."></textarea>
-        </div>
-        <button class="fsubmit" id="enviar">Enviar con amor 🌿</button>
       </div>
     </div>
   </div>
@@ -753,12 +759,35 @@ const io = new IntersectionObserver(es => {
 }, {threshold:.1});
 document.querySelectorAll('.rev,.rev-l,.rev-r').forEach(el => io.observe(el));
 
-document.getElementById('enviar').addEventListener('click', function(e){
-  e.preventDefault();
-  this.textContent = '✓ Enviado con amor 🌿';
-  this.style.background = 'var(--tierra)';
-  setTimeout(()=>{ this.textContent='Enviar con amor 🌿'; this.style.background=''; }, 3000);
-});
+const forma = document.getElementById('formaGia');
+if(forma){
+  forma.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const btn = document.getElementById('enviar');
+    btn.textContent = 'Enviando... 🌿';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+    try {
+      const res = await fetch('https://formspree.io/f/xlgzrrqk', {
+        method: 'POST',
+        body: new FormData(forma),
+        headers: { 'Accept': 'application/json' }
+      });
+      if(res.ok){
+        forma.style.display = 'none';
+        document.getElementById('gracias').style.display = 'block';
+      } else {
+        btn.textContent = 'Error, intenta de nuevo';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+      }
+    } catch(err){
+      btn.textContent = 'Error de conexión';
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }
+  });
+}
 </script>
 </body>
 </html>
