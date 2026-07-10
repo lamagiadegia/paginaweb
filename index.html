@@ -817,7 +817,9 @@ footer p { font-size:.88rem; color:rgba(245,243,239,.5); line-height:1.9; }
         </div>
       </div>
       <div class="cont-form rev-r">
-        <form action="https://formspree.io/f/xlgzrrqk" method="POST" id="formaGia">
+        <form action="https://formsubmit.co/hablacongia@lamagiadegia.com" method="POST" id="formaGia">
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde La Magia de Gia">
+          <input type="hidden" name="_template" value="table">
           <div class="fgrupo">
             <label>Tu nombre</label>
             <input type="text" name="nombre" placeholder="¿Cómo te llamas?" required>
@@ -883,7 +885,7 @@ if(forma){
     btn.disabled = true;
     btn.style.opacity = '0.7';
     try {
-      const res = await fetch('https://formspree.io/f/xlgzrrqk', {
+      const res = await fetch('https://formsubmit.co/ajax/hablacongia@lamagiadegia.com', {
         method: 'POST',
         body: new FormData(forma),
         headers: { 'Accept': 'application/json' }
