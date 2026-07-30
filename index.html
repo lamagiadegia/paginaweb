@@ -14,6 +14,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-5Z3CV9GC');</script>
 <!-- End Google Tag Manager -->
 
+<!-- Google tag (gtag.js) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5VBVWB04SD"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-5VBVWB04SD');
+</script>
+<!-- End Google tag -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
@@ -177,15 +190,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     max-width:32ch;margin:0;color:var(--texto);}
 
   /* ---------- Contacto ---------- */
-  .form-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(2rem,4vw,3.5rem);}
-  @media (max-width:880px){.form-grid{grid-template-columns:1fr;}}
-  .contact-links{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem;}
-  form.contacto{display:flex;flex-direction:column;gap:1.1rem;}
-  label{font-weight:600;font-size:1rem;display:block;margin-bottom:.45rem;}
-  input,textarea{width:100%;font-family:var(--body);font-size:1.05rem;padding:.85em 1em;
-    border:1.5px solid var(--linea);border-radius:12px;background:var(--crema);color:var(--texto);}
-  input:focus,textarea:focus{outline:2px solid var(--oliva);outline-offset:1px;border-color:transparent;}
-  textarea{resize:vertical;min-height:140px;}
+  .contacto-final{max-width:70ch;margin-inline:auto;text-align:center;}
+  .contacto-final h2{font-size:clamp(2.2rem,4vw,3.2rem);}
+  .contacto-final .intro{color:var(--texto-suave);margin-top:1.2rem;font-size:1.12rem;}
+  .contacto-final .redes{color:var(--texto-suave);margin-top:1.6rem;margin-bottom:0;}
+  .contact-links{display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center;margin-top:1.8rem;}
 
   /* ---------- Pie ---------- */
   footer.site{background:var(--salvia-suave);border-top:1px solid var(--linea);padding-block:3rem;}
@@ -194,6 +203,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .brand-foot{font-family:var(--display);font-size:1.7rem;font-weight:600;color:var(--oliva);}
   .firma{font-family:var(--quote);font-style:italic;font-size:1.4rem;color:var(--texto-suave);}
   .socials{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:1.03rem;}
+
+  /* ---------- Aviso de cookies ---------- */
+  .cookies{position:fixed;left:0;right:0;bottom:0;z-index:200;display:none;
+    background:var(--crema);border-top:1px solid var(--linea);
+    box-shadow:0 -12px 34px -26px rgba(0,0,0,.5);}
+  .cookies.visible{display:block;}
+  .cookies-caja{max-width:var(--maxw);margin-inline:auto;padding:1.3rem var(--gutter);
+    display:flex;gap:1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+  .cookies-caja p{margin:0;font-size:1rem;color:var(--texto-suave);max-width:64ch;}
+  .cookies-botones{display:flex;gap:.7rem;flex-wrap:wrap;}
+
+  /* ---------- Política de privacidad ---------- */
+  .legal{background:var(--beige-2);}
+  .legal h2{font-size:clamp(1.9rem,3.4vw,2.6rem);}
+  .legal details{border-top:1px solid var(--linea);padding:1.1rem 0;}
+  .legal details:last-of-type{border-bottom:1px solid var(--linea);}
+  .legal summary{cursor:pointer;font-family:var(--display);font-size:1.28rem;color:var(--oliva);
+    font-weight:500;list-style:none;}
+  .legal summary::-webkit-details-marker{display:none;}
+  .legal summary::before{content:"+ ";font-weight:600;}
+  .legal details[open] summary::before{content:"– ";}
+  .legal details p, .legal details li{font-size:1.02rem;color:var(--texto-suave);}
+  .legal details p{margin:.9rem 0 0;}
+  .legal ul{margin:.9rem 0 0;padding-left:1.3rem;}
+  .legal li{margin-bottom:.5rem;}
+  .legal .fecha{margin-top:1.8rem;font-size:.98rem;color:var(--texto-suave);}
 
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
   .reveal.in{opacity:1;transform:none;}
@@ -293,7 +328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>Un espacio privado, a tu ritmo, para mirar con calma lo que estás atravesando y salir con algo concreto que puedas practicar.</p>
           <div class="card-foot">
             <span class="meta">Encuentro individual</span>
-            <a href="https://wa.me/573150899951?text=Hola%20Gia%20%F0%9F%92%9B%20Quiero%20saber%20m%C3%A1s%20sobre%20las%20Sesiones%201%3A1." class="btn btn-wa btn-sm" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+            <a href="https://wa.me/573150899951?text=Hola%20Gia%20%F0%9F%92%9B%20Quiero%20saber%20m%C3%A1s%20sobre%20las%20Sesiones%201%3A1." data-servicio="Sesiones 1:1" class="btn btn-wa btn-sm" target="_blank" rel="noopener">Escribir por WhatsApp</a>
           </div>
         </article>
 
@@ -303,7 +338,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>No venimos a blanquear lo que sientes ni a hacer como si nada pasara. Venimos a sacar los pensamientos enredados, tenderlos a la luz y devolverte un poco de espacio. Escritura expresiva, paso a paso, donde identificaremos el pensamiento que debemos lavar, planchar o más bien resignificar.</p>
           <div class="card-foot">
             <span class="meta">Práctica guiada de journaling</span>
-            <a href="https://wa.me/573150899951?text=Hola%20Gia%20%F0%9F%92%9B%20Quiero%20saber%20m%C3%A1s%20sobre%20la%20Lavander%C3%ADa%20de%20Pensamientos." class="btn btn-wa btn-sm" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+            <a href="https://wa.me/573150899951?text=Hola%20Gia%20%F0%9F%92%9B%20Quiero%20saber%20m%C3%A1s%20sobre%20la%20Lavander%C3%ADa%20de%20Pensamientos." data-servicio="Lavandería de Pensamientos" class="btn btn-wa btn-sm" target="_blank" rel="noopener">Escribir por WhatsApp</a>
           </div>
         </article>
 
@@ -313,7 +348,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>La numerología como espejo, no como predicción. Un lenguaje simbólico para mirar tus patrones y escuchar lo que ya sabes. No te dice qué hacer: te ayuda a nombrar por dónde estás pasando.</p>
           <div class="card-foot">
             <span class="meta">Lectura reflexiva</span>
-            <a href="https://wa.me/573150899951?text=Hola%20Gia%20%F0%9F%92%9B%20Quiero%20saber%20m%C3%A1s%20sobre%20la%20lectura%20de%20Numerolog%C3%ADa." class="btn btn-wa btn-sm" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+            <a href="https://wa.me/573150899951?text=Hola%20Gia%20%F0%9F%92%9B%20Quiero%20saber%20m%C3%A1s%20sobre%20la%20lectura%20de%20Numerolog%C3%ADa." data-servicio="Numerología" class="btn btn-wa btn-sm" target="_blank" rel="noopener">Escribir por WhatsApp</a>
           </div>
         </article>
 
@@ -323,7 +358,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>Una comunidad y un proceso de tres meses para transformar la relación contigo misma: lecciones, encuentros en vivo y acompañamiento sostenido.</p>
           <div class="card-foot">
             <span class="meta">Cohortes por temporada</span>
-            <a href="https://wa.me/573150899951?text=Hola%20Gia%20%F0%9F%92%9B%20Quiero%20saber%20m%C3%A1s%20sobre%20Alkimia." class="btn btn-wa btn-sm" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+            <a href="https://wa.me/573150899951?text=Hola%20Gia%20%F0%9F%92%9B%20Quiero%20saber%20m%C3%A1s%20sobre%20Alkimia." data-servicio="Alkimia" class="btn btn-wa btn-sm" target="_blank" rel="noopener">Escribir por WhatsApp</a>
           </div>
         </article>
 
@@ -333,7 +368,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>Unos días para bajar el ritmo, respirar bosque y reencontrarte contigo en persona. La raíz antes que la flor, la naturaleza como maestra.</p>
           <div class="card-foot">
             <span class="meta">Encuentro presencial en la montaña</span>
-            <a href="https://wa.me/573150899951?text=Hola%20Gia%20%F0%9F%92%9B%20Quiero%20saber%20m%C3%A1s%20sobre%20el%20Retiro%20en%20la%20monta%C3%B1a." class="btn btn-wa btn-sm" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+            <a href="https://wa.me/573150899951?text=Hola%20Gia%20%F0%9F%92%9B%20Quiero%20saber%20m%C3%A1s%20sobre%20el%20Retiro%20en%20la%20monta%C3%B1a." data-servicio="Retiro en la montaña" class="btn btn-wa btn-sm" target="_blank" rel="noopener">Escribir por WhatsApp</a>
           </div>
         </article>
 
@@ -396,27 +431,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <section id="privacidad" class="legal">
+    <div class="wrap reveal">
+      <p class="eyebrow">Lo formal, dicho claro</p>
+      <h2>Política de privacidad y tratamiento de datos</h2>
+      <p style="max-width:60ch;margin-top:1.1rem;color:var(--texto-suave);">Aquí te cuento qué información recojo, para qué la uso y qué puedes pedirme sobre ella. Sin letra menuda y sin trampas.</p>
+
+      <details>
+        <summary>Quién responde por tus datos</summary>
+        <p>La responsable es Gia, de La Magia de Gia, con domicilio en Colombia. Si quieres pedirme algo sobre tu información, escríbeme al correo contacto@lamagiadegia.com o por WhatsApp al +57 315 089 9951. Te respondo yo, no un robot.</p>
+      </details>
+
+      <details>
+        <summary>Qué información recojo y para qué</summary>
+        <p>Si me escribes por WhatsApp: tu número y la conversación. Si me escribes al correo: tu dirección y el mensaje. En los dos casos lo uso únicamente para responderte y para acompañarte si decides seguir conmigo.</p>
+        <p>Si aceptas las cookies: datos de navegación como qué páginas miraste, cuánto tiempo estuviste, desde qué ciudad y qué dispositivo entraste. Esto llega agrupado en estadísticas y no me dice quién eres tú en particular. Me sirve para saber qué contenido está sirviendo y cuál no.</p>
+      </details>
+
+      <details>
+        <summary>Lo que me cuentas de tu vida</summary>
+        <p>Cuando me escribes, a veces me compartes cosas delicadas: cómo te sientes, por qué estás pasando, tu historia. En Colombia eso se considera información sensible y tiene una protección especial. Tú decides cuánto contarme y cuándo, no estás obligada a darme ningún dato para recibir acompañamiento.</p>
+        <p>Lo que me confías no lo comparto con nadie, no lo publico y no lo uso como contenido, ni siquiera sin tu nombre, a menos que tú me des permiso expreso para hacerlo.</p>
+      </details>
+
+      <details>
+        <summary>Con quién se comparte</summary>
+        <p>No vendo ni entrego tu información a terceros para publicidad. Para que esta página funcione uso algunos servicios que procesan datos por mí: Google Analytics para las estadísticas de visitas y WhatsApp, que es de Meta, para conversar. Cada uno tiene sus propias políticas y puede guardar información en servidores fuera de Colombia.</p>
+      </details>
+
+      <details>
+        <summary>Cuánto tiempo la guardo</summary>
+        <p>Los mensajes y conversaciones los conservo mientras dure nuestro contacto y un tiempo razonable después, por si retomamos. Si me pides que borre tu información, la borro. Las estadísticas de visitas se conservan según los plazos que maneje Google.</p>
+      </details>
+
+      <details>
+        <summary>Tus derechos</summary>
+        <p>Según la Ley 1581 de 2012 de protección de datos personales, tú puedes en cualquier momento:</p>
+        <ul>
+          <li>Saber qué información tengo tuya.</li>
+          <li>Pedir que la corrija o la actualice.</li>
+          <li>Pedir que la borre.</li>
+          <li>Retirar el permiso que diste, cuando aplique.</li>
+          <li>Presentar una queja ante la Superintendencia de Industria y Comercio si consideras que no manejé bien tus datos.</li>
+        </ul>
+        <p>Para cualquiera de estas cosas, escríbeme. No necesitas justificar por qué, ni explicarme nada. Te confirmo cuando esté hecho.</p>
+      </details>
+
+      <details>
+        <summary>Cookies y cómo apagarlas</summary>
+        <p>Las cookies son archivitos que el navegador guarda para reconocer que ya estuviste aquí. Las que uso son de estadística, y no se activan hasta que tú aceptes en el aviso que aparece abajo.</p>
+        <p>Si aceptaste y luego cambiaste de opinión, puedes borrar las cookies desde la configuración de tu navegador, en la sección de privacidad, y el aviso te va a volver a preguntar la próxima vez que entres.</p>
+      </details>
+
+      <details>
+        <summary>Un recordatorio importante</summary>
+        <p>Lo que ofrezco son procesos de acompañamiento emocional. No es psicoterapia, no es atención clínica y no reemplaza el trabajo de profesionales de la salud. Si estás atravesando algo que necesita atención especializada, buscarla es lo más sensato que puedes hacer, y podemos caminar juntas mientras tanto.</p>
+      </details>
+
+      <p class="fecha">Última actualización: julio de 2026.</p>
+    </div>
+  </section>
+
   <section id="contacto">
-    <div class="wrap">
-      <div class="form-grid">
-        <div class="reveal">
-          <p class="eyebrow">Escríbeme</p>
-          <h2 style="font-size:clamp(2.2rem,4vw,3.2rem);">Cuéntame en qué momento estás.</h2>
-          <p style="color:var(--texto-suave);margin-top:1.1rem;">Leo cada mensaje con calma. Si buscas acompañarte, encontrarte con la comunidad o saber cómo empezar, escríbeme y te respondo.</p>
-          <div class="contact-links">
-            
-            <a href="https://wa.me/573150899951" class="btn btn-wa" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-          </div>
-          <p style="color:var(--texto-suave);margin-top:1.3rem;">También me encuentras como <strong>@lamagiadegia</strong> en TikTok, Instagram, YouTube y WhatsApp.</p>
-        </div>
-        <!-- Cambia TU-ID por tu endpoint real de Formspree -->
-        <form class="contacto reveal" action="https://formspree.io/f/TU-ID" method="POST">
-          <div><label for="nombre">¿Cómo te llamas?</label><input id="nombre" name="nombre" type="text" required autocomplete="name"></div>
-          <div><label for="correo">Tu correo</label><input id="correo" name="email" type="email" required autocomplete="email"></div>
-          <div><label for="mensaje">¿Qué te trae por aquí?</label><textarea id="mensaje" name="mensaje" required></textarea></div>
-          <button type="submit" class="btn btn-solid" style="align-self:flex-start;">Enviar mensaje</button>
-        </form>
+    <div class="wrap contacto-final reveal">
+      <p class="eyebrow">Escríbeme</p>
+      <h2>Cuéntame en qué momento estás.</h2>
+      <p class="intro">Leo cada mensaje con calma. Si buscas acompañarte, encontrarte con la comunidad o saber cómo empezar, escríbeme y te respondo.</p>
+      <div class="contact-links">
+        <a href="https://wa.me/573150899951" data-servicio="Contacto general" class="btn btn-wa" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        <a href="mailto:contacto@lamagiadegia.com" class="btn btn-ghost">contacto@lamagiadegia.com</a>
       </div>
+      <p class="redes">También me encuentras como <strong>@lamagiadegia</strong> en TikTok, Instagram y YouTube.</p>
     </div>
   </section>
 
@@ -433,14 +518,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="https://www.instagram.com/lamagiadegia" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.youtube.com/@lamagiadegia" target="_blank" rel="noopener">YouTube</a>
       <a href="https://wa.me/573150899951" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#privacidad">Privacidad</a>
     </div>
   </div>
 </footer>
+
+<div class="cookies" id="avisoCookies" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+  <div class="cookies-caja">
+    <p>Uso cookies para saber cuánta gente visita esta página y qué le sirve. No recogen tu nombre ni leen lo que escribes, y puedes decir que no sin perder nada de lo que hay aquí. Te cuento todo en la <a href="#privacidad">política de privacidad</a>.</p>
+    <div class="cookies-botones">
+      <button class="btn btn-solid btn-sm" id="aceptarCookies">Aceptar</button>
+      <button class="btn btn-ghost btn-sm" id="rechazarCookies">Rechazar</button>
+    </div>
+  </div>
+</div>
 
 <script>
   const toggle=document.querySelector('.nav-toggle'),menu=document.getElementById('menu');
   toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',o);});
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  // Avisar a Tag Manager qué servicio motivó el clic a WhatsApp
+  window.dataLayer = window.dataLayer || [];
+  document.querySelectorAll('a[data-servicio]').forEach(a=>{
+    a.addEventListener('click',()=>{
+      window.dataLayer.push({event:'clic_whatsapp', servicio:a.dataset.servicio});
+      if(typeof gtag==='function'){ gtag('event','clic_whatsapp',{servicio:a.dataset.servicio}); }
+    });
+  });
+
+
+  // Aviso de cookies: Analytics solo se activa si la persona acepta
+  (function(){
+    var aviso = document.getElementById('avisoCookies');
+    function leer(){ try { var m = document.cookie.match(/(?:^|; )lmg_cookies=([^;]*)/); return m ? m[1] : null; } catch(e){ return null; } }
+    function guardar(v){ try { document.cookie = 'lmg_cookies=' + v + ';path=/;max-age=' + (60*60*24*180) + ';SameSite=Lax'; } catch(e){} }
+    function activar(){ if (typeof gtag === 'function') gtag('consent','update',{'analytics_storage':'granted'}); }
+
+    var decision = leer();
+    if (decision === 'si') { activar(); }
+    else if (decision !== 'no') { aviso.classList.add('visible'); }
+
+    document.getElementById('aceptarCookies').addEventListener('click', function(){
+      guardar('si'); activar(); aviso.classList.remove('visible');
+    });
+    document.getElementById('rechazarCookies').addEventListener('click', function(){
+      guardar('no'); aviso.classList.remove('visible');
+    });
+  })();
+
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
