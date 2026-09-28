@@ -600,6 +600,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="https://wa.me/573150899951" data-servicio="Contacto general" class="btn btn-solid" target="_blank" rel="noopener">
           <svg aria-hidden="true"><use href="#ico-wa"/></svg>Escribir por WhatsApp
         </a>
+        <a href="https://chat.whatsapp.com/LrApDhvXWg5F6pMZuo3kDW" data-comunidad="Comunidad WhatsApp contacto" class="btn btn-ghost" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#ico-wa"/></svg>Únete a mi comunidad
+        </a>
         <a href="mailto:contacto@lamagiadegia.com" class="btn btn-ghost">contacto@lamagiadegia.com</a>
       </div>
       <p class="redes">Encuéntrame como <strong>@lamagiadegia</strong> en TikTok, Instagram y YouTube.</p>
@@ -652,6 +655,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // Avisar a Tag Manager qué servicio motivó el clic a WhatsApp
   window.dataLayer = window.dataLayer || [];
+  document.querySelectorAll('a[data-comunidad]').forEach(a=>{
+    a.addEventListener('click',()=>{
+      window.dataLayer.push({event:'clic_comunidad', comunidad:a.dataset.comunidad});
+      if(typeof gtag==='function'){ gtag('event','clic_comunidad',{comunidad:a.dataset.comunidad}); }
+    });
+  });
   document.querySelectorAll('a[data-recurso]').forEach(a=>{
     a.addEventListener('click',()=>{
       window.dataLayer.push({event:'clic_recurso', recurso:a.dataset.recurso});
