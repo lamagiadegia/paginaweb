@@ -494,7 +494,7 @@ section{padding-block:64px}
 /* ===== CONFIGURA AQUÍ TU NÚMERO DE WHATSAPP =====
    Formato internacional sin "+" ni espacios. Ej.: "573001234567".
    Si lo dejas vacío, WhatsApp abre con el mensaje listo y la persona elige el contacto. */
-const WA_NUMBER = "";
+const WA_NUMBER = "573150899951";
 const WA_TEXT = "Hola, Gia, quiero iniciar mi proceso de lavado premium";
 const waUrl = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(WA_TEXT);
 document.querySelectorAll(".js-wa").forEach(a => { a.href = waUrl; a.target = "_blank"; a.rel = "noopener"; });
